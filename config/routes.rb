@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  resources :books do
+    resources :comments, only: [:show, :create, :destroy, :edit, :update]
+  end
+  resources :reports do
+    resources :comments, only: [:show, :create, :destroy, :edit, :update]
+  end
   devise_for :users, :controllers => {
     :registrations => 'users/registrations', 
     :omniauth_callbacks => "users/omniauth_callbacks"

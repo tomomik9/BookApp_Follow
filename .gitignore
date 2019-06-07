@@ -33,9 +33,23 @@
 # Ignore empty test and fixtures
 /test/models/user_test.rb
 /test/fixtures/users.yml
+/test/controllers/comments_controller_test.rb
+/test/models/comment_test.rb
+/test/models/report_test.rb
 
 # Ignore uploaded image
 /public/uploads/book/picture/**/**
 
+# Ignore helpers
+/app/helpers/comments_helper.rb
+/app/helpers/reports_helper.rb
+
+# Ignore assets
+/app/assets/javascripts/**
+/app/assets/stylesheets/comments.scss
+/app/assets/stylesheets/reports.scss
+
+
 # Ignore .env
 .env
+
