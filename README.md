@@ -1,3 +1,3 @@
 
-# ActiveStorage
-ActiveStorageによる画像アップロードの機能をBookアプリに実装します。
+# Comments
+Bookアプリにコメント機能を実装します。
