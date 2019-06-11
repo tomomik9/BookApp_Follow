@@ -1,0 +1,29 @@
+<h1 class="head"><%= t('.Reports')%></h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('.Title')%></th>
+      <th><%= t('.Memo')%></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reports.each do |report| %>
+      <tr>
+        <td><%= report.title %></td>
+        <td><%= report.memo %></td>
+        <td><%= link_to t('.Show'), report %></td>
+        <td><%= link_to t('.Edit'), edit_report_path(report) %></td>
+        <td><%= link_to t('.Destroy'), report, method: :delete, data: { confirm: t('reports.index.notice') } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to t('.New Report'), new_report_path %>|
+<%= link_to t('.Book'),books_path %>
+

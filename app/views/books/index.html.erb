@@ -1,7 +1,6 @@
-  
-<h1><%= t('.Books') %></h1>
+<h1 class="head"><%= t('.Books') %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th><%= t('.Title') %></th>
@@ -30,4 +29,5 @@
 <%= paginate @books %>
 <br>
 
-<%= link_to t('.New Book'), new_book_path %>
+<%= link_to t('.New Book'), new_book_path %>|
+<%= link_to t('.Report'),reports_path %>

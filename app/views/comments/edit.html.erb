@@ -1,0 +1,34 @@
+<h2><%= t('.EditComments') %></h2>
+<%if params[:book_id] %>
+  <%= form_for @comment, url: :book_comment  do |f| %>
+    <p>
+      <%= t('.CommentTitle') %><br />
+      <%= f.text_field :commenter %>
+    </p>
+
+    <p>
+      <%= t('.Body') %><br />
+      <%= f.text_area :body, cols: 60, rows: 8 %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+<% else %>
+  <%= form_for @comment, url: :report_comment  do |f| %>
+    <p>
+      <%=  t('.CommentTitle') %><br />
+      <%= f.text_field :commenter %>
+    </p>
+
+    <p>
+      <%= t('.Body') %><br />
+      <%= f.text_area :body, cols: 60, rows: 8 %>
+    </p>
+
+    <p>
+      <%= f.submit %>
+    </p>
+  <% end %>
+<% end %>

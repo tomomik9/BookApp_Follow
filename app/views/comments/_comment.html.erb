@@ -1,0 +1,20 @@
+<div class="comment">
+<p>
+  <strong><%= t('.CommentTitle')%></strong>
+  <%= comment.commenter %>
+</p>
+<p>
+  <strong><%= t('.Comment')%></strong>
+  <%= simple_format comment.body %>
+</p>
+<% if params[:controller] == "books" &&  comment.user_id == current_user.id %>
+  <%= link_to t('.delete'),book_comment_path(@book, comment),method: :delete, data: { confirm: t('comments.comment.notice') } %>
+<%  elsif params[:controller] == "reports" &&  comment.user_id == current_user.id  %>
+  <%= link_to t('.delete'),report_comment_path(@report, comment), method: :delete, data: { confirm: t('comments.comment.notice') } %>
+<% end %>
+<% if params[:controller] == "books" &&  comment.user_id == current_user.id  %>
+  <%= link_to t('.edit'),edit_book_comment_path(@book, comment)  %>
+<%  elsif params[:controller] == "reports" &&  comment.user_id == current_user.id  %>
+  <%= link_to t('.edit'),edit_report_comment_path(@report, comment)  %>
+<% end %>
+</div>

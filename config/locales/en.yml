@@ -40,3 +40,16 @@ en:
         notice: 'Successfully updated'
       destroy:
         notice: 'Successfully deleted'  
+  reports:
+    index:
+      notice: 'Are You Sure?'
+    flash:
+      create:
+        notice: 'fully created.'
+      update:
+        notice: 'Report was successfully updated.'
+      destroy:
+        notice: 'Report was successfully deleted.'
+  comments:
+    comment:
+      notice: 'Are You Sure?'
