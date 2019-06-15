@@ -1,0 +1,21 @@
+<h2 class="user_detail">ユーザー名:<%= @user.username %></h2>
+<% unless current_user.avatar_url %>
+<h2 class="user_detail">郵便番号:<%= @user.postal_code %></h2>
+<h2 class="user_detail">住所:<%= @user.address %></h2>
+<h2 class="user_detail">自己紹介:<%= @user.bio %></h2>
+<% end %>
+<%= link_to "following:#{current_user.following.count}" , following_user_path(current_user) %>|
+      <%= link_to "followers:#{current_user.followers.count}" , followers_user_path(current_user) %>
+<h2 clas="user_detail"><%= image_tag(@user.image.variant(resize:'80x80').processed)if @user.image.attached? %></h2>
+ <% if current_user != @user %>
+   <% unless current_user.following?(@user) %>
+     <%= form_for(current_user.active_friendships.build) do |f| %>
+       <div><%= hidden_field_tag :followed_id, @user.id %></div>
+       <%= f.submit t('.Follow') %>
+     <% end %>
+   <% else %>
+     <%= form_for(current_user.active_friendships.find_by(followed_id: @user.id), html: { method: :delete }) do |f| %>
+       <div><%= f.submit t('.Unfollow') %></div>
+     <% end %>
+   <% end %>
+ <% end %>
