@@ -1,22 +1,18 @@
 ja:
   errors:
-      messages:
+     messages:
         max_size_error: "ファイルを%{max_size}バイト以下のサイズにしてください"
-        not_saved: "が不正な値です。"
+        not_saved: "不正な値です。"
   activerecord:
     errors:
       messages:
-        already_confirmed: "was already confirmed, please try signing in"
-        confirmation_period_expired: "needs to be confirmed within %{period}, please request a new one"
-        expired: "has expired, please request a new one"
-        not_found: "not found"
-        not_locked: "was not locked"
         not_saved: "件のエラーがあります。修正して再度送信して下さい。"
         max_size_error: "ファイルを%{max_size}バイト以下のサイズにしてください"
     models:
       book: '本'
       report: '日報'
       comment: 'コメント'
+      user: 'ユーザー一覧'
     attributes:
       book:                      # モデル名
         title: 'タイトル'            # モデルの属性名
@@ -29,6 +25,14 @@ ja:
       comment:
         commenter: 'タイトル'
         body: '内容'
+      user:
+        username: 'ユーザー名'
+        email: 'Eメール'
+        password: 'パスワード'
+        postal_code: '郵便番号'
+        address: '住所'
+        bio: '自己紹介'
+        image: '画像'
   layouts:
     application:
       Edit profile: 'プロフィールを編集'
@@ -37,99 +41,30 @@ ja:
       Login: 'ログイン'
       Logged in as: 'ログインユーザー'
   books: # app/views/booksを示す
-    index: # app/views/books/indexを示す
+    index:
       Books: '書籍一覧'
-      Title: 'タイトル'
-      Memo: '内容メモ'
-      Author: '著者'
-      Picture: '写真'
-      Show: '詳細画面'
-      Edit: '編集'
-      Destroy: '削除'
-      notice: '内容を削除してもよろしいでしょうか？'
-      New Book: '新規登録'
       Report: '日報作成画面へ'
+      Users: 'ユーザー一覧'
     new:
       New Book: '書籍新規登録画面'
-      Back: '書籍一覧へ戻る'
     show:
-      Edit: '編集する'
-      Title: 'タイトル:'
-      Memo: '内容メモ:'
-      Author: '著者:'
-      Picture: '写真:'
-      Back: '戻る'
       AddComments: 'コメントを追加する'
-      CommentTitle: 'コメントタイトル'
-      Body: '内容'
-      Comment: '内容'
     edit:
       Editing Book: '編集画面'
-      Show: '詳細画面'
-      Back: '戻る'
-  reports: # app/views/booksを示す
-    form:
-      Title: 'タイトル'
-      Memo: 'メモ'
-    index: # app/views/books/indexを示す
+  reports:
+    index: 
       Reports: '日報一覧'
-      Title: 'タイトル'
-      Memo: '内容メモ'
-      Show: '詳細画面'
-      Edit: '日報編集'
-      Destroy: '削除'
-      notice: '内容を削除してもよろしいでしょうか？'
-      New Report: '新規作成'
       Book: '書籍登録画面へ'
-    new:
-      New Report: '新規登録画面'
-      Back: '一覧へ戻る'
     show:
-      Edit: '日報を編集する'
-      Title: 'タイトル:'
-      Memo: '内容:'
-      Back: '一覧へ戻る'
       AddComments: 'コメントを追加する'
-      CommentTitle: 'コメントタイトル'
-      Body: '内容'
-      Comment: '内容'
     edit:
       Editing Report: '編集画面'
-      Show: '詳細画面'
-      Back: '一覧へ戻る'
-  comments: # app/views/booksを示す
-    comment:
-      CommentTitle: 'コメントタイトル'
-      Body: '内容'
-      Comment: '内容'
-      delete: '削除'
-      edit: '編集'
-      notice: '内容を削除してもよろしいでしょうか？'
-    show:
-      Edit: '編集する'
-      Title: 'タイトル:'
-      Memo: '内容メモ:'
-      Author: '著者:'
-      Picture: '写真:'
-      Back: '一覧へ戻る'
-    edit:
-      CommentTitle: 'コメントタイトル'
-      EditComments : '編集画面'
-      Body: 'コメント欄'
-      show: '詳細画面'
-      Back: '一覧へ戻る'
-  devise:
-    registrations:
-      new:
-        Username: 'ユーザー名'
-        Image: '画像'
-      edit:
-        Image: '画像'
-    sessions:
-      new:
-        Username: 'ユーザー名'
+  users:
+    show_follow:
+      Follow: 'フォロ一覧'
+    show_follower:
+      Followers: 'フォロワー一覧'
   helpers:
-    submit:
       create: '登録する'
       update: '更新する'
   flash:
@@ -139,3 +74,10 @@ ja:
       notice: '無事、内容が更新されました'
     destroy:
       notice: '無事、内容が削除されました'
+  scaffold:
+    show: 詳細
+    edit: 編集
+    destroy: 削除
+    new: 新規登録画面
+    back: 一覧へ戻る
+    confirm: 本当によろしいですか?

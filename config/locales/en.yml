@@ -30,26 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  books: 
-    index: 
-      notice: 'Are You Sure?'
-    flash:
-      create:
-        notice: 'Successfully created.'
-      update:
-        notice: 'Successfully updated'
-      destroy:
-        notice: 'Successfully deleted'  
-  reports:
-    index:
-      notice: 'Are You Sure?'
-    flash:
-      create:
-        notice: 'fully created.'
-      update:
-        notice: 'Report was successfully updated.'
-      destroy:
-        notice: 'Report was successfully deleted.'
-  comments:
-    comment:
-      notice: 'Are You Sure?'
+  scaffold:
+    confirm: 'Are you sure?'

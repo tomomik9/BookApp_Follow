@@ -1,8 +1,8 @@
-<h2 class="user_detail">ユーザー名:<%= @user.username %></h2>
+<h2 class="user_detail"><%= t('activerecord.attributes.user.username') %>:<%= @user.username %></h2>
 <% unless current_user.avatar_url %>
-<h2 class="user_detail">郵便番号:<%= @user.postal_code %></h2>
-<h2 class="user_detail">住所:<%= @user.address %></h2>
-<h2 class="user_detail">自己紹介:<%= @user.bio %></h2>
+  <h2 class="user_detail"><%= t('activerecord.attributes.user.postal_code') %>:<%= @user.postal_code %></h2>
+  <h2 class="user_detail"><%= t('activerecord.attributes.user.address') %>:<%= @user.address %></h2>
+  <h2 class="user_detail"><%= t('activerecord.attributes.user.bio') %>:<%= @user.bio %></h2>
 <% end %>
 <%= link_to "following:#{current_user.following.count}" , following_user_path(current_user) %>|
       <%= link_to "followers:#{current_user.followers.count}" , followers_user_path(current_user) %>

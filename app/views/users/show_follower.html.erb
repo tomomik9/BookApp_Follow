@@ -1,4 +1,5 @@
-<h1 class="users"><%= "#{@user.username}をフォローしているユーザー" %></h1>
+<h1 class="users"><%= @user.username %></h1>
+<h2 class="users"><%= t('.Followers') %></h2>
 <ul>
   <% @users.each do |user| %>
     <li>

@@ -1,20 +1,20 @@
 <p>
-  <strong><%= t('.Title') %></strong>
+  <strong><%= t('activerecord.attributes.book.title') %></strong>
   <%= @book.title %>
 </p>
 
 <p>
-  <strong><%= t('.Memo') %></strong>
+  <strong><%= t('activerecord.attributes.book.memo') %></strong>
   <%= @book.memo %>
 </p>
 
 <p>
-  <strong><%= t('.Author') %></strong>
+  <strong><%= t('activerecord.attributes.book.author') %></strong>
   <%= @book.author %>
 </p>
 
 <p>
-  <strong><%= t('.Picture') %></strong>
+  <strong><%= t('activerecord.attributes.book.picture') %></strong>
   <%= image_tag(@book.picture_url) if @book.picture.present? %>
 </p>
 
@@ -23,12 +23,12 @@
 <h2><%= t('.AddComments') %></h2>
 <%= form_for( [@book, @book.comments.build] ) do |f| %>
   <p>
-    <%= t('.CommentTitle') %><br />
+    <%= t('activerecord.attributes.comment.commenter') %><br />
     <%= f.text_field :commenter %>
   </p>
 
   <p>
-    <%= t('.Body') %><br />
+    <%= t('activerecord.attributes.comment.body') %><br />
     <%= f.text_area :body, cols: 60, rows: 8 %>
   </p>
 
@@ -38,5 +38,5 @@
 <% end %>
 
 
-<%= link_to t('.Edit'), edit_book_path(@book) %> |
-<%= link_to t('.Back'), books_path %>
+<%= link_to t('scaffold.edit'), edit_book_path(@book) %> |
+<%= link_to t('scaffold.back'), books_path %>

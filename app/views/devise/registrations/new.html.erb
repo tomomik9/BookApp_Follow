@@ -4,8 +4,7 @@
   <%= render "devise/shared/error_messages", resource: resource %>
   
   <div class="field">
-    <%= t('.Username') %><br />
-    <br />
+    <%= f.label :username  %><br />
     <%= f.text_field :username, autofocus: true, autocomplete: "username" %>
   </div>
 
@@ -42,12 +41,12 @@
   </div>
   
   <div class="field">
-    <%= t('.Image') %><br />
+    <%= f.label :image  %><br />
     <%= f.file_field :image %>
   </div>
 
   <div class="actions">
-    <%= f.submit t('.sign_up') %>
+    <%= f.submit  %>
   </div>
 <% end %>
 
