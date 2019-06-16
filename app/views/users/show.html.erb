@@ -1,11 +1,11 @@
 <h2 class="user_detail"><%= t('activerecord.attributes.user.username') %>:<%= @user.username %></h2>
-<% unless current_user.avatar_url %>
+<% unless @user.avatar_url %>
   <h2 class="user_detail"><%= t('activerecord.attributes.user.postal_code') %>:<%= @user.postal_code %></h2>
   <h2 class="user_detail"><%= t('activerecord.attributes.user.address') %>:<%= @user.address %></h2>
   <h2 class="user_detail"><%= t('activerecord.attributes.user.bio') %>:<%= @user.bio %></h2>
 <% end %>
-<%= link_to "following:#{current_user.following.count}" , following_user_path(current_user) %>|
-      <%= link_to "followers:#{current_user.followers.count}" , followers_user_path(current_user) %>
+<%= link_to "#{t('layouts.application.following')}:#{current_user.following.count}" , following_user_path(current_user) %>|
+      <%= link_to "#{t('layouts.application.followers')}:#{current_user.followers.count}" , followers_user_path(current_user) %>
 <h2 clas="user_detail"><%= image_tag(@user.image.variant(resize:'80x80').processed)if @user.image.attached? %></h2>
  <% if current_user != @user %>
    <% unless current_user.following?(@user) %>
@@ -19,3 +19,7 @@
      <% end %>
    <% end %>
  <% end %>
+</br>
+<%= link_to t('books.index.Users'), users_path %>|
+<%= link_to t('books.index.Books'), books_path %>|
+<%= link_to t('reports.index.Reports'),reports_path %>|

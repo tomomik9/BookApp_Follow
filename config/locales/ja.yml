@@ -40,6 +40,8 @@ ja:
       Sign up: '登録'
       Login: 'ログイン'
       Logged in as: 'ログインユーザー'
+      following: 'フォロー数'
+      followers: 'フォロワー数'
   books: # app/views/booksを示す
     index:
       Books: '書籍一覧'
@@ -64,6 +66,9 @@ ja:
       Follow: 'フォロ一覧'
     show_follower:
       Followers: 'フォロワー一覧'
+    show:
+      Follow: 'フォローする'
+      Unfollow: 'フォロー解除する'
   helpers:
       create: '登録する'
       update: '更新する'

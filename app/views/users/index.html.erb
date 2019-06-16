@@ -6,3 +6,9 @@
      </li>
   <% end %>
 </ul>
+</br>
+<br>
+<%= paginate @users %>
+<br>
+<%= link_to t('books.index.Books'), books_path %>|
+<%= link_to t('reports.index.Reports'),reports_path %>
