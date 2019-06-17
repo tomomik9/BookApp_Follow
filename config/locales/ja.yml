@@ -79,6 +79,10 @@ ja:
       notice: '無事、内容が更新されました'
     destroy:
       notice: '無事、内容が削除されました'
+    follow:
+      notice: '無事、フォローが完了しました'
+    unfollow:
+      notice: 'フォローを解除しました'
   scaffold:
     show: 詳細
     edit: 編集

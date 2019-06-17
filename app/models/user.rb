@@ -20,7 +20,7 @@ class User < ApplicationRecord
   def following?(other_user)
     following.include?(other_user)
   end
-  
+
   has_one_attached :image
   
   def self.create_unique_string

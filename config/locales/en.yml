@@ -34,11 +34,15 @@ en:
     confirm: 'Are you sure?'
   flash:
     create:
-      notice:  'Successfully created.'
+      notice: 'Successfully created.'
     update:
       notice: 'Successfully updated.'
     destroy:
       notice: 'Successfully destroyed.'
+    follow:
+      notice: 'Successfully followed.'
+    unfollow:
+      notice: 'Successfullu unfollowed.'
   layouts:
     application:
       following: 'following'

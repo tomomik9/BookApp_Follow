@@ -1,4 +1,5 @@
 class Users::FollowsController < ApplicationController 
+
   def following
     @user  = User.find(params[:id])
     @users = @user.following
