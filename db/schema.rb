@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_06_15_225954) do
-=======
-ActiveRecord::Schema.define(version: 2019_06_07_093556) do
->>>>>>> parent of e2b75d5... deviseの課題変更に伴い、カラムを3種類追加(郵便番号、住所、自己紹介文)、またUserのコントローラ追加
+ActiveRecord::Schema.define(version: 2019_06_17_142752) do
 
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
@@ -90,6 +86,9 @@ ActiveRecord::Schema.define(version: 2019_06_07_093556) do
     t.string "provider"
     t.string "username"
     t.string "avatar_url"
+    t.string "postal_code"
+    t.string "address"
+    t.text "bio"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["username"], name: "index_users_on_username", unique: true
