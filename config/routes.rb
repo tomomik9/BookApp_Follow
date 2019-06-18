@@ -20,8 +20,6 @@ Rails.application.routes.draw do
   scope "(:locale)" do
     resources :users
   end
-  resources :follows 
-  resources :followers
   resources :friendships, only: [:create, :destroy]
   resources :follows, only: [:show]
   resources :followers, only: [:show]
