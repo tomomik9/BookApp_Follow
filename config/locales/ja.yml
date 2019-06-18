@@ -61,11 +61,13 @@ ja:
       AddComments: 'コメントを追加する'
     edit:
       Editing Report: '編集画面'
-  users:
+  follows:
     show_follow:
       Follow: 'フォロ一覧'
+  followers:
     show_follower:
       Followers: 'フォロワー一覧'
+  users:
     show:
       Follow: 'フォローする'
       Unfollow: 'フォロー解除する'

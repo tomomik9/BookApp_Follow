@@ -11,7 +11,6 @@ Rails.application.routes.draw do
     :registrations => 'users/registrations', 
     :omniauth_callbacks => "users/omniauth_callbacks"
    }
-  resources :books
   scope "(:locale)" do
     resources :books
   end
@@ -21,23 +20,11 @@ Rails.application.routes.draw do
   scope "(:locale)" do
     resources :users
   end
-  resources :follows do
-    member do
-      get :following
-    end
-  end
-  resources :followers do
-    member do
-      get :followers
-    end
-  end
+  resources :follows 
+  resources :followers
   resources :friendships, only: [:create, :destroy]
-  scope module: :users do
-    resources :follows, only: %i(show)
-  end
-  scope module: :users do
-    resources :followers, only: %i(show)
-  end
+  resources :follows, only: [:show]
+  resources :followers, only: [:show]
   if Rails.env.development? #開発環境の場合
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end
