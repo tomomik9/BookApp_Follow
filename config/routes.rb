@@ -21,14 +21,22 @@ Rails.application.routes.draw do
   scope "(:locale)" do
     resources :users
   end
-  resources :users do
+  resources :follows do
     member do
-      get :following, :followers
+      get :following
     end
   end
-  resources :friendships,       only: [:create, :destroy]
+  resources :followers do
+    member do
+      get :followers
+    end
+  end
+  resources :friendships, only: [:create, :destroy]
   scope module: :users do
-    resources :follows, only: %i(index show)
+    resources :follows, only: %i(show)
+  end
+  scope module: :users do
+    resources :followers, only: %i(show)
   end
   if Rails.env.development? #開発環境の場合
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
