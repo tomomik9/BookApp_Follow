@@ -62,10 +62,10 @@ ja:
     edit:
       Editing Report: '編集画面'
   follows:
-    show_follow:
+    index:
       Follow: 'フォロ一覧'
   followers:
-    show_follower:
+    index:
       Followers: 'フォロワー一覧'
   users:
     show:
