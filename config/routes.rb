@@ -21,8 +21,12 @@ Rails.application.routes.draw do
     resources :users
   end
   resources :friendships, only: [:create, :destroy]
-  resources :follows, only: [:show]
-  resources :followers, only: [:show]
+  resources :users do
+    resources :follows, only: [:index]
+  end
+  resources :users do
+    resources :followers, only: [:index]
+  end
   if Rails.env.development? #開発環境の場合
     mount LetterOpenerWeb::Engine, at: "/letter_opener"
   end

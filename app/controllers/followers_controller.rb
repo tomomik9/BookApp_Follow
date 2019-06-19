@@ -1,9 +1,8 @@
 class FollowersController < ApplicationController
   before_action :authenticate_user!
 
-  def show 
-    @user  = User.find(params[:id])
+  def index 
+    @user  = User.find(params[:user_id])
     @users = @user.followers
-    render 'show_follower'
   end
 end
