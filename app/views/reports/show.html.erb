@@ -1,10 +1,10 @@
 <p>
-  <strong><%= t('.Title') %></strong>
+  <strong><%= t('activerecord.attributes.report.title') %></strong>
   <%= @report.title %>
 </p>
 
 <p>
-  <strong><%= t('.Memo') %></strong>
+  <strong><%= t('activerecord.attributes.report.memo') %></strong>
   <%= @report.memo %>
 </p>
 
@@ -13,12 +13,12 @@
 <h2><%= t('.AddComments') %></h2>
 <%= form_for( [@report, @report.comments.build] ) do |f| %>
   <p>
-    <%= t('.CommentTitle') %><br />
+    <%= t('activerecord.attributes.comment.commenter') %><br />
     <%= f.text_field :commenter %>
   </p>
 
   <p>
-    <%= t('.Body') %><br />
+    <%= t('activerecord.attributes.comment.body') %><br />
     <%= f.text_area :body, cols: 60, rows: 8 %>
   </p>
 
@@ -27,5 +27,5 @@
   </p>
 <% end %>
 
-<%= link_to t('.Edit'), edit_report_path(@report) %> |
-<%= link_to t('.Back'), reports_path %>
+<%= link_to t('scaffold.edit'), edit_report_path(@report) %> |
+<%= link_to t('scaffold.back'), reports_path %>

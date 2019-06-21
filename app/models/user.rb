@@ -4,7 +4,24 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :confirmable, :omniauthable, 
          omniauth_providers: %i(github)
-  
+
+  has_many :active_friendships,  class_name: "Friendship", foreign_key: "follower_id", dependent: :destroy
+  has_many :passive_friendships, class_name: "Friendship", foreign_key: "followed_id", dependent: :destroy
+  has_many :following, through: :active_friendships,  source: :followed
+  has_many :followers, through: :passive_friendships, source: :follower
+
+  def follow(other_user)
+    following << other_user
+  end
+
+  def unfollow(other_user)
+    active_friendships.find_by(followed_id: other_user.id).destroy
+  end
+
+  def following?(other_user)
+    following.include?(other_user)
+  end
+
   has_one_attached :image
   
   def self.create_unique_string

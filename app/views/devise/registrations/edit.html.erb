@@ -33,7 +33,7 @@
   
   <div class="field">
    <% unless current_user.avatar_url %>
-    <%= t('.Image') %><br />
+    <%= f.label :image  %><br />
     <%= f.file_field :image, autocomplete: "image" %>
    <% end %>
   </div>

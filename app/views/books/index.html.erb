@@ -3,10 +3,10 @@
 <table class="table">
   <thead>
     <tr>
-      <th><%= t('.Title') %></th>
-      <th><%= t('.Memo') %></th>
-      <th><%= t('.Author') %></th>
-      <th><%= t('.Picture') %></th>
+      <th><%= t('activerecord.attributes.book.title') %></th>
+      <th><%= t('activerecord.attributes.book.memo') %></th>
+      <th><%= t('activerecord.attributes.book.author') %></th>
+      <th><%= t('activerecord.attributes.book.picture') %></th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,9 +18,9 @@
         <td><%= book.memo %></td>
         <td><%= book.author %></td>
         <td><%= book.picture %></td>
-        <td><%= link_to t('.Show'), book %></td>
-        <td><%= link_to t('.Edit'), edit_book_path(book) %></td>
-        <td><%= link_to t('.Destroy'), book, method: :delete, data: { confirm: t('books.index.notice') } %></td>
+        <td><%= link_to t('scaffold.show'), book %></td>
+        <td><%= link_to t('scaffold.edit'), edit_book_path(book) %></td>
+        <td><%= link_to t('scaffold.destroy'), book, method: :delete, data: { confirm: t('scaffold.confirm') } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -29,5 +29,6 @@
 <%= paginate @books %>
 <br>
 
-<%= link_to t('.New Book'), new_book_path %>|
-<%= link_to t('.Report'),reports_path %>
+<%= link_to t('scaffold.new'), new_book_path %>|
+<%= link_to t('reports.index.Reports'),reports_path %>|
+<%= link_to t('.Users'), users_path %>

@@ -6,8 +6,8 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :image])
-    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :image])
+    devise_parameter_sanitizer.permit(:sign_up, keys: [:username, :image, :postal_code, :address, :bio])
+    devise_parameter_sanitizer.permit(:account_update, keys: [:username, :image, :postal_code, :address, :bio])
   end
  
   def set_locale
@@ -19,10 +19,10 @@ class ApplicationController < ActionController::Base
   end
 
   def after_sign_in_path_for(resource)
-    "/books"
+    books_path
   end
 
   def after_sign_out_path_for(resource)
-    "/users/sign_in"
+    user_session_path
   end
 end
